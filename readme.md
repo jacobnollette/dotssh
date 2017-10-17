@@ -4,7 +4,7 @@
 
 
 #### Initialize your ssh keys
-* ssh-keygen -t rsa; #click through the prompt, to generate key
+* ```ssh-keygen -t rsa; #click through the prompt, to generate key```
 * cd ~/.ssh;
 
 #### Initialize the repository
