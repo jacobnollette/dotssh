@@ -1,0 +1,8 @@
+id_rsa.pub
+id_rsa
+known_hosts
+.AppleDouble
+*.swp
+
+authorized_keys
+config

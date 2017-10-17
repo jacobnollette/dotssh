@@ -1,0 +1,26 @@
+the_hostname=$(hostname);
+#echo $the_hostname;
+
+
+cd ~/.ssh/;
+
+rm ~/.ssh/authorized_keys;
+rm ~/.ssh/config;
+
+
+hostname_print="$(echo $the_hostname)_$(whoami)";
+
+
+name="$(hostname)_$(whoami)";
+low_name=$(echo "$name" | tr "[:upper:]" "[:lower:]");
+name=$low_name;
+hostname_print=$name;
+
+#touch ~/.ssh/bin/bin-authorized_keys/bin-machines/$hostname_print;
+#touch ~/.ssh/bin/bin-config/bin-machines/$hostname_print;
+#. ~/.ssh/bin/build;
+
+ln ~/.ssh/bin/bin-authorized_keys/bin-print/$hostname_print authorized_keys;
+ln ~/.ssh/bin/bin-config/bin-print/$hostname_print config;
+
+chmod 600 authorized_keys config;

@@ -1,0 +1,24 @@
+
+
+actual_pwd=$(pwd);
+
+#the_pwd=`dirname $0`;
+#cd $the_pwd;
+
+cd ~/.ssh/bin;
+
+chmod -R go-rwx keys;
+
+
+
+#echo $the_pwd;
+
+
+cd bin-authorized_keys; ./build;
+cd ..;
+cd bin-config; ./build;
+cd ..;
+./install;
+
+
+cd $actual_pwd;

@@ -1,0 +1,21 @@
+# dot ssh
+
+## Basics
+Initialize this in your ~/.ssh. This will not overwrite your keys, but instead it will symbolic link your authorized_keys and config files.
+
+ssh-keygen -t rsa; #click through the prompt, to generate key
+cd ~/.ssh;
+git init;
+git remote add origin git@github.com:jnollette/dotfiles;
+git pull origin master;
+cd bin;
+./create;
+./build;
+
+Fork this repo into a private repo, and house your cascading keys in git.
+
+bin-global is the globals... Touch and create multiple files w/o file extension, for compartmentalized keys
+bin-print is the print folder. It gets overwritten every time your build.
+bin-machine is the granular approach. You can add keys or configs to specifc machines.
+
+

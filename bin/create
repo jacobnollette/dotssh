@@ -1,0 +1,13 @@
+
+#name=$1;
+name="$(hostname)_$(whoami)";
+low_name=$(echo "$name" | tr "[:upper:]" "[:lower:]");
+name=$low_name;
+#echo $name;
+
+touch ~/.ssh/bin/bin-authorized_keys/bin-machines/$name;
+touch ~/.ssh/bin/bin-authorized_keys/bin-print/$name;
+touch ~/.ssh/bin/bin-config/bin-machines/$name;
+touch ~/.ssh/bin/bin-config/bin-print/$name;
+
+./build;

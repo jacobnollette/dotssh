@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+: > global;
+cat bin-global/* >> global;
+
+
+#	compile directory location
+dir_working="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+dir_machines=$dir_working/bin-machines;
+dir_print=$dir_working/bin-print;
+
+working_machines=$dir_machines/*;
+working_print=$dir_print/*;
+
+for f in $working_machines
+	do
+		filename=$(basename "$f");
+		
+		machines_file=$dir_machines/$filename;
+		print_file=$dir_print/$filename;
+
+		cat $machines_file > $print_file;
+		cat global >> $print_file;
+		chmod 600 $print_file;
+
+	done;
+
+
+
+
+
+
+
+
